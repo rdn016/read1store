@@ -1,59 +1,95 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Read1one Camera Store
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive e-commerce admin system for a e-commerce store built with Laravel 12 and Filament 3.2.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Product Management**: Manage camera products with specifications, images, and stock tracking
+- **Order Processing**: Handle customer orders with WhatsApp integration and status management
+- **Admin Dashboard**: Interactive dashboard with charts, latest orders, and low stock alerts
+- **User Management**: Role-based permissions using Filament Shield
+- **Category Organization**: Organize products into categories
+- **Stock Management**: Automatic stock updates on order confirmations/cancellations
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Setup
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Prerequisites
 
-## Learning Laravel
+- PHP 8.1 or higher
+- Composer
+- Node.js and npm
+- MySQL or compatible database
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Installation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/rdn016/read1store.git
+   cd read1store
+   ```
 
-## Laravel Sponsors
+2. Install PHP dependencies:
+   ```bash
+   composer install
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3. Install Node.js dependencies:
+   ```bash
+   npm install
+   ```
 
-### Premium Partners
+4. Copy environment file and configure:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+5. Configure your database in `.env` file
 
-## Contributing
+6. Run migrations and seeders:
+   ```bash
+   php artisan migrate
+   php artisan db:seed
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+7. Link storage:
+   ```bash
+   php artisan storage:link
+   ```
 
-## Code of Conduct
+8. Generate Filament Shield permissions:
+   ```bash
+   php artisan shield:generate
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+9. Start the development server:
+    ```bash
+    php artisan serve
+    ```
 
-## Security Vulnerabilities
+### Access the Website
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- URL: `http://localhost:8000`
+- Admin URL: `http://localhost:8000/atmint`
+
+
+## Usage
+
+- **Dashboard**: View statistics, latest orders, and low stock alerts
+- **Products**: Add/edit products with specifications and images
+- **Orders**: Manage orders, update status, and contact customers via WhatsApp
+- **Categories**: Organize products into categories
+- **Users**: Manage admin users and permissions
+
+## Technologies Used
+
+- **Laravel 11**: PHP framework
+- **Filament 3.3**: Admin panel builder
+- **Filament Shield**: Role-based permissions
+- **MySQL**: Database
+- **Tailwind CSS**: Styling
+- **Vite**: Asset bundling
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License.
