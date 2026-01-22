@@ -81,7 +81,7 @@ class OrderItem extends Model
      */
     public function order(): BelongsTo
     {
-        return $this->belongsTo(OrderItem::class);
+        return $this->belongsTo(Order::class);
     }
 
     /**
